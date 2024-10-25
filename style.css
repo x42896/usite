@@ -1,17 +1,1117 @@
-h1{
-    text-align: center;
-    color: blue;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/* - - - - - - - - - - - - - - - - - - - - 20_тире_с_каждой_стороны - - - - - - - - - - - - - - - - - - - - */
+
+/* Для главного названия */
+@font-face {
+    font-family: 'Nico Moji';
+    src: url('./fonts/NicoMoji-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-div{
-    width: 300px;
-    height: 300px;
-    margin: 50px;
-    padding: 20px;
-    background-color: rgb(183, 183, 183);
+/* Для всего текста по сути */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+
+:root{
+    /* 100%/12(колонок)=8,3 */
+    --margin-big: 0 16%;
+    --margin-small: 0 8%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+}
+
+body{
+    background-color: aliceblue;
+    height: 5000px;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+    margin-top: 150px;
+}
+
+h3{
+    font-size: 2rem;
 }
 
 p{
+    font-size: 1rem;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    white-space: nowrap; /* Не переносить тест на новую строку */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - heared - - - - - - - - - - - - - - - - - - - - */
+header{ 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    /* background-color: antiquewhite; */
+}
+
+.header__inner{
+    display: flex;
+}
+
+.header__inner .logo{
+    display: flex;
+    align-items: center;
+}
+
+.header__inner .logo img{
+    width: 80px;
+    margin-right: 50px;
+}
+
+.header__inner .name h4{
+    font-family: 'Nico Moji', sans-serif;
+    font-size: 2em;
+}
+
+.header__inner .name p{
+    font-size: 0.7em;
+}
+
+nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Располагаем элементы в ряд */
+    gap: 2em; /* Пробелы между элементами */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    font-family: "Manrope", sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #262626;
+    text-transform: uppercase;
+    text-decoration: none; /* Убираем подчёркивание */
+}
+
+    nav ul li a:hover {
+        color: #1B76FF; /* Цвет при наведении, если нужно */
+        border-bottom: 2px solid #1B76FF;
+        transition: color 0.3s;
+    }
+/* - - - - - - - - - - - - - - - - - - - - /heared - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - main-screen - - - - - - - - - - - - - - - - - - - - */
+.main-screen{ 
+    display: flex;
+    align-items: center;
+    height: 75vh;
+    margin: var(--margin-big);
+    background-image: url('./img/how-i-work-l.jpg');
+    background-size: cover;
+
+}
+
+/* Описание преподаватель онлайн курсов Александр Белоусов */
+.main-description{
+    padding: 0 5%;
+    margin-top: 20%;
+    width: 40%;
+    background-color: rgb(1, 6, 36);
+}
+
+.main-description h1,
+.main-description h2,
+.main-description p,
+.main-description {
+    margin: 2% 0;
+    text-transform: uppercase;
     color: white;
 }
+
+/* Нужно будет правильно настроить размеры тегов h потому что они тут как не очень подходят по размерам */
+.main-description h2{
+    font-size: 1rem;
+}
+
+.main-description h1{
+    font-size: 2rem;
+}
+/* - - - - - - - - - - - - - - - - - - - - /main-screen - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - reviews - - - - - - - - - - - - - - - - - - - - */
+.reviews{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-description{
+    background-color: antiquewhite;
+    margin: var(--margin-big);
+    margin-top: 100px;
+    padding: 1% 5%;
+    text-align: center;
+}
+
+.reviews-description h3{
+    margin-bottom: 10px;
+}
+
+.photo-green{
+    background-color: rgb(108, 188, 108);
+    /* padding: 5%; */ /* для него надо наверно внтури ещё один блок, для контената inner чтобы он не выходил за пределы */
+    margin-bottom: 20px;
+    height: 250px;
+    width: 100%;
+}
+
+.reviews-button button{
+    margin-top: 20px;
+}
+/* - - - - - - - - - - - - - - - - - - - - /reviews - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - unity - - - - - - - - - - - - - - - - - - - - */
+.unity{ 
+    margin: var(--margin-small);
+    margin-top: 200px;
+    height: 70vh;
+    /* height: 558px; */ /* это размер из фигмы */
+    /* background-color: bisque; */
+    position: relative;
+}
+
+.unity-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%; /* опускается на 50% от высоты родительского блока */
+    left: 0;
+    transform: translateY(-50%); /* затем поднимается на половину своей собственной высоты, чтобы быть по центру */
+    width: 50%;
+    /* height: 50%; */
+    background-color: rgba(175, 175, 175, 0); /* Прозрачность можно добавлять в цвет в конце */
+    z-index: 2;
+    padding: 5% 0;
+}
+
+.unity-description-logo{
+    margin-bottom: 10%;
+}
+
+.unity-description-title{
+    margin-bottom: 5%;
+    -webkit-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    -moz-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+}
+
+.unity-description-description p{
+    -webkit-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    -moz-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+}
+
+
+
+.unity-tizer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 76%;
+    height: 100%;
+    background-color: rgb(58, 58, 58, 0.5);
+    z-index: 1;
+    border-radius: 10px;
+    background-image: url(/img/gif/Unity-tizer.gif2); /* - - - - - - -- - - - - - - - - - - - - - -GIF Unity */
+    background-size: cover;
+}
+
+/* .unity-button{
+    /* position: absolute; */ /* Позиционируем кнопку абсолютно */
+    /* bottom: 5%; */ /* Отступ от низа (можно настроить) */
+    /* left: 2%; /* Центруем кнопку по горизонтали */
+    
+    /* left: 50%; */ /* Центруем кнопку по горизонтали */
+    /* transform: translateX(-50%); */
+    /* margin: 10%; */
+
+
+
+.unity-33per{
+    position: absolute;
+    background-color: rgba(0, 255, 255, 0);
+    width: 24%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.unity-33per button{
+    margin-bottom: 10%;
+}
+/* - - - - - - - - - - - - - - - - - - - - /unity - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - advantages - - - - - - - - - - - - - - - - - - - - */
+.advantages{
+    margin: var(--margin-big);
+    margin-top: 150px;
+}
+
+.advantages .grid-container{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+    /* Для средних экранов */
+    @media (max-width: 1200px) {
+        .advantages .grid-container{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+    }
+
+    /* Для телефонов */
+    @media (max-width: 600px) {
+        .advantages .grid-container{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+        }
+    }
+    
+.grid-item{ 
+    background-color:lightgray;
+    padding: 20px 150px 20px 20px;
+    border-radius: 15px;
+    min-height: 250px;
+    min-width: 33%;
+    position: relative;
+}
+
+.grid-item .icon{
+    font-size: 80px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+}
+
+.advantages .grid-item h4{
+    width: 70%;
+    margin-bottom: 50px;
+}
+
+.advantages .grid-item p{
+    width: 90%;
+}
+/* - - - - - - - - - - - - - - - - - - - - /advantages - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - web-sites - - - - - - - - - - - - - - - - - - - - */
+.web-sites{ 
+    margin: var(--margin-big);
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.web-sites h2{
+    margin-bottom: -17px;
+}
+
+
+.web-tizer{
+    margin: var(--margin-big);
+    width: 100%;
+    height: 800px;
+    background-color: #e6e6e3;
+    border-radius: 20px 20px 0 0;
+
+}
+
+
+
+
+
+
+.web-grid{
+    margin: var(--margin-big);
+}
+
+.web-grid h3{
+    text-align: center;
+    margin: 30px;
+}
+
+
+.web-grid .grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-item{ 
+    background-color:lightgray;
+    padding: 20px 150px 20px 20px;
+    border-radius: 15px;
+    min-height: 250px;
+    min-width: 33%;
+    position: relative;
+}
+
+.grid-item .icon{
+    font-size: 80px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+}
+
+.web-grid .item1{
+    grid-column: span 2;
+}
+
+.web-grid .item2{
+    grid-row: span 2;
+}
+/* - - - - - - - - - - - - - - - - - - - - /web-sites - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - which-course - - - - - - - - - - - - - - - - - - - - */
+.which-course{ 
+    margin: var(--margin-big);
+}
+
+.which-course h2{
+    margin-bottom: 10px;
+}
+
+.which-course p{
+    margin-bottom: 30px;
+}
+
+.which-course .grid-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-item{ 
+    background-color:lightgray;
+    padding: 20px 150px 20px 20px;
+    border-radius: 15px;
+    min-height: 250px;
+    min-width: 33%;
+    position: relative;
+}
+
+.grid-item .icon{
+    font-size: 80px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+}
+/* - - - - - - - - - - - - - - - - - - - - /which-course - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - price - - - - - - - - - - - - - - - - - - - - */
+.price{ 
+    margin: var(--margin-big);
+}
+
+.price h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.choice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice__inner{
+    width:fit-content;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.individual{
+    background-color: rgb(141, 141, 141);
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-right: 10px;
+}
+
+.groups{
+    background-color: rgb(141, 141, 141);
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.price .grid-container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-item{ 
+    background-color:lightgray;
+    padding: 20px 150px 20px 20px;
+    border-radius: 15px;
+    min-height: 250px;
+    min-width: 33%;
+    position: relative;
+}
+
+.grid-item .icon{
+    font-size: 80px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+}
+
+.one-two{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.one-two p{
+    margin-bottom: 10px;
+}
+/* - - - - - - - - - - - - - - - - - - - - /price - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - best-works - - - - - - - - - - - - - - - - - - - - */
+.best-works{
+    margin: var(--margin-big);
+}
+
+.best-works h2{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.small-window{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 200px 0;
+}
+
+.small-window__inner{
+    padding: 100px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.small-window__inner h4{
+    margin-bottom: 40px;
+}
+/* - - - - - - - - - - - - - - - - - - - - /best-works - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - how-to-start - - - - - - - - - - - - - - - - - - - - */
+.how-to-start{
+    margin: var(--margin-big);
+}
+
+.how-to-start h2{
+    margin-bottom: 10px;
+}
+
+.how-to-start p{
+    margin-bottom: 30px;
+}
+
+.how-to-start .grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+
+.how-to-start .grid-item{ 
+    min-width: 20px;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    background-color:lightgray;
+}
+/* - - - - - - - - - - - - - - - - - - - - /how-to-start - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - questions - - - - - - - - - - - - - - - - - - - - */
+.questions{
+    margin: var(--margin-big);
+    margin-top: 400px;
+}
+
+.questions h2{
+    margin-bottom: 20px;
+}
+
+.questions p{
+    margin-bottom: 50px;
+}
+
+/* .questions__ul{
+
+} */
+
+.questions__ul__inner{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.questions__ul__inner .text{
+    padding: 30px;
+}
+
+.questions__ul__inner .arrow{
+    padding: 20px;
+    background-color: aqua;
+}
+
+.questions__ul__button{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.questions__ul__button .first-button{
+    margin-right: 20px;
+}
+/* - - - - - - - - - - - - - - - - - - - - /questions - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - form-call - - - - - - - - - - - - - - - - - - - - */
+.form-call{
+    height: 500px;
+    padding: 5% 16%;
+    background-color: rgb(78, 96, 64);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gray-block{
+    width: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left-block{
+    width: 50%;
+    padding: 5%;
+    background-color: #e6e6e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+
+.left-block h2{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.rigth-block{
+    width: 50%;
+    padding: 5%;
+    background-color: #a4a45a;
+}
+
+.rigth-block input{
+    width: calc(100% - 10px);
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+.button-and-text{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.button-and-text p{
+    margin-left: 20px;
+}
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - /form-call - - - - - - - - - - - - - - - - - - - - */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - footer - - - - - - - - - - - - - - - - - - - - */
+footer{
+    background-color: #17151e;
+    padding: 2% 16%;
+}
+
+.footer__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__inner__up{
+    width: 100%;
+    height: 100px;
+    background-color: #a4a45a;
+}
+
+.footer__inner__main{
+    width: 100%;
+    height: 300px;
+    background-color: #9e9256;
+}
+
+.footer__inner__line{
+    width: 130%;
+    border-bottom: 2px solid red;
+}
+
+.footer__inner__down{
+    width: 100%;
+    height: 100px;
+    background-color: #32291c;
+}
+/* - - - - - - - - - - - - - - - - - - - - /footer - - - - - - - - - - - - - - - - - - - - */
