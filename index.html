@@ -8,7 +8,7 @@
     <title>Главная</title>
 </head>
 <body>
-    <!-- Ver 1.1 -->
+    <!-- ver 1.1 выложил на Git -->
     <!-- - - - - - header и nav шапка с меню - - - - - -->
     <header>
         <div class="header__inner">
@@ -331,7 +331,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>7 - 14 лет</p>
+                        <p class="age">7 - 14 лет</p>
                     </div>
                 </div>
 
@@ -345,7 +345,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>7 - 16 лет</p>
+                        <p class="age">7 - 16 лет</p>
                     </div>
                 </div>
 
@@ -359,7 +359,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>9 - 14 лет</p>
+                        <p class="age">9 - 14 лет</p>
                     </div>
                 </div>
 
@@ -373,7 +373,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>от 12 лет</p>
+                        <p class="age">от 12 лет</p>
                     </div>
                 </div>
 
@@ -387,7 +387,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>от 12 лет</p>
+                        <p class="age">от 12 лет</p>
                     </div>
                 </div>
 
@@ -401,7 +401,7 @@
 
                     <div class="grid-item__inner__right">
                         <img class="grid-item__inner__right__icon" src="img/which-course/comp.gif" alt="">
-                        <p>от 12 лет</p>
+                        <p class="age">от 12 лет</p>
                     </div>
                 </div>
 
@@ -419,26 +419,29 @@
 
         <!-- - - - - - price цены блок - - - - - -->
         <section class="price">
+            <div class="price__inner">
+                <div class="price__inner__container">
+                    <h2>Понятные цены</h2>
+                    <div class="choice">
+                        <div class="choice__inner">
+                            <div class="individual"><p>Индивидуально</p></div>
+                            <div class="groups"><p>В группе</p></div>
+                        </div>
+                    </div>
 
-            <h2>Понятные цены</h2>
-            <div class="choice">
-                <div class="choice__inner">
-                    <div class="individual"><p>Индивидуально</p></div>
-                    <div class="groups"><p>В группе</p></div>
+                    <div class="grid-container">
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                        <div class="grid-item"></div>
+                    </div>
+
+                    <div class="one-two">
+                        <p>1. Чем больше занятий оплачено, тем ниже цена, без дополнительных условий.</p>
+                        <p>2. Рекомендуйте курс знакомым и получайте скидку 30%</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="grid-container">
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-            </div>
-
-            <div class="one-two">
-                <p>1. Чем больше занятий оплачено, тем ниже цена, без дополнительных условий.</p>
-                <p>2. Рекомендуйте курс знакомым и получайте скидку 30%</p>
-            </div>
-
+            
         </section>
 
 
@@ -452,19 +455,21 @@
 
         <!-- - - - - - best-works лучшие работы - - - - - -->
         <section class="best-works">
-
-            <h2>Примеры лучших работ<br>
-                студентов</h2>
-            <p>Тут можно посмотреть лучшие проеты которые делали</p>
-            
-            <div class="small-window">
-                <div class="small-window__inner">
-                    <h4>Блок в разработке</h4>
-                    <p>Актуальный список работ можно<br>
-                        посмотреть по этой ссылке на гугл диске</p>
+            <div class="best-works__inner">
+                <div class="best-works__inner__container">
+                    <h2>Примеры лучших работ<br>
+                        студентов</h2>
+                    <p>Тут можно посмотреть лучшие проеты которые делали</p>
+                    
+                    <div class="small-window">
+                        <div class="small-window__inner">
+                            <h4>Блок в разработке</h4>
+                            <p>Актуальный список работ можно<br>
+                                посмотреть по этой ссылке на гугл диске</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
+            </div>        
         </section>
 
 
@@ -478,17 +483,19 @@
 
         <!-- - - - - - how-to-start как начать - - - - - -->
         <section class="how-to-start">
-
-            <h2>Как начать?</h2>
-            <p>Чтобы начать занятия пройди пять этапов ниже</p>
-            
-            <div class="grid-container">
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+            <div class="how-to-start__inner">
+                <h2>Как начать?</h2>
+                <p>Чтобы начать занятия пройди пять этапов ниже</p>
+                
+                <div class="grid-container">
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"></div>
+                </div>
             </div>
+            
 
         </section>
 
@@ -501,57 +508,55 @@
 
 
 
-        <!-- - - - - - questions остались вопросы - - - - - -->
-        <section class="questions">
-
-            <h2>Ответы на часто<br>
-                задаваемые  вопросы</h2>
-            <p>Тут вы найдёте ответы на самые часто задаваемые вопросы по поводу онлайн курса программирования для детей</p>
-            
-            <div class="questions__ul">
+        <!-- - - - - - faq часто задаваемые впросы - - - - - -->
+        <section class="faq">
+            <div class="faq__inner">
+                <h2>Ответы на часто<br>
+                    задаваемые  вопросы</h2>
+                <p>Тут вы найдёте ответы на самые часто задаваемые вопросы по поводу онлайн курса программирования для детей</p>
                 
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
+                <div class="faq__ul">
+                    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__inner">
+                        <div class="text">Тут примерный текст для вопросов написал</div>
+                        <div class="arrow"><p>></p></div>
+                    </div>
+    
+                    <div class="faq__ul__button">
+                        <button class="first-button">Все ответы</button> <button>Оставить свой вопрос</button>
+                    </div>
                 </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__inner">
-                    <div class="text">Тут примерный текст для вопросов написал</div>
-                    <div class="arrow">Y</div>
-                </div>
-
-                <div class="questions__ul__button">
-                    <button class="first-button">Все ответы</button> <button>Оставить свой вопрос</button>
-                </div>
-                
-
             </div>
-
         </section>
 
 
@@ -565,28 +570,26 @@
 
         <!-- - - - - - form форма обратной связи - - - - - -->
         <section class="form-call">
-            
-            <div class="gray-block">
-                <div class="left-block">
-                    <h2>Остались вопросы?</h2>
-                    <p>Начните с простого шага — заполните форму обратной<br>
-                        связи. И я отвечу в ближайшее время, а так же вы можете<br>
-                        сами связаться со мной в разделе контакты.</p>
+            <div class="form-call__inner">
+                <div class="form-call__inner__window">
+                    <div class="left-block">
+                        <h2>Остались вопросы?</h2>
+                        <p>Понимаю что очень много информации.<br><span>Начните с простого шага — заполните форму</span> обратной связи.<br>Я смогу ответить в ближайшее время, а так же вы можете связаться сами со мной в разделе контакты.</p>
+                    </div>
+    
+                    <div class="rigth-block">
+                        <form action="">
+                            <input type="text" placeholder="Ваше имя">
+                            <input type="number" placeholder="+7 (999) 999-99-99">
+                            <input type="number" placeholder="Ваша электронная почта">
+                            <div class="button-and-text">
+                                <button>Хочу начать</button>
+                                <p>Нажимая кнопку отправить вы даёте согласие на обработку персональных данных</p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="rigth-block">
-                    <form action="">
-                        <input type="text" placeholder="Ваше имя"><br>
-                        <input type="number" placeholder="+7 (999) 999-99-99"><br>
-                        <input type="number" placeholder="Ваша электронная почта"><br>
-                        <div class="button-and-text">
-                            <button>Хочу начать</button>
-                            <p>Нажимая кнопку отправить вы даёте<br>
-                                согласие на обработку персональных данных</p>
-                        </div>
-                    </form>
-                </div>
-            </div> 
+            </div>
         </section>
 
     </main>
