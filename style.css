@@ -1,4 +1,5 @@
-/* - - - - - - - - - - - - - - - - - - - - 20_тире_с_каждой_стороны - - - - - - - - - - - - - - - - - - - - */
+/* ver 1.2 */
+/* - - - - - 5_тире_с_каждой_стороны - - - - - */
 
 /* Для главного названия */
 @font-face {
@@ -11,12 +12,12 @@
 /* Для всего текста по сути */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-
-
 :root{
     /* 100%/12(колонок)=8,3 */
     --margin-big: 0 16%;
     --margin-small: 0 8%;
+    --color-bg: #fbfbfb;
+    --bg-color-grid-white: rgba(205, 205, 205, 0.19);
 }
 
 *{
@@ -27,7 +28,7 @@
 }
 
 body{
-    background-color: aliceblue;
+    background-color: var(--color-bg);
     height: 5000px;
 }
 
@@ -36,16 +37,15 @@ h1{
 }
 
 h2{
-    font-size: 3rem;
-    margin-top: 150px;
+    font-size: 3.5rem;
 }
 
 h3{
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 p{
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 button{
@@ -61,63 +61,73 @@ button{
 
 
 
+/* - - - - - heared начало - - - - - */
+header{
+    background-color: #fffffff6;
 
+    /* У класса main стоит большой padding-top чтобы если поставить header position: fixed чтобы он начал нормально скролиться */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - heared - - - - - - - - - - - - - - - - - - - - */
-header{ 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-    /* background-color: antiquewhite; */
+    /* position: fixed;
+    width: 100%;
+    background-color: #fffffff6;
+    z-index: 10; */
 }
 
 .header__inner{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
 }
 
-.header__inner .logo{
+.header-left-block{
+    display: flex;
+}
+
+.header-left-block .logo{
     display: flex;
     align-items: center;
 }
 
-.header__inner .logo img{
+.header-left-block .logo img{
     width: 80px;
     margin-right: 50px;
 }
 
-.header__inner .name h4{
+/* - - - - - Печатающийся текст для лого - - - - - */
+.header-left-block .name h4 {
     font-family: 'Nico Moji', sans-serif;
     font-size: 2em;
 }
 
-.header__inner .name p{
+.header-left-block .name p {
     font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block; /* Устанавливаем текст и курсор в одну строку */
+    border-right: 2px solid #000;
+    animation: typing 3s steps(30, end) 2s forwards, blink-caret 0.7s step-end infinite 2s;
 }
 
+/* Ключевые кадры для печати текста */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 89%; }
+}
+
+/* Анимация мигающего курсора */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+/* - - - - - nav меню начало - - - - - */
 nav ul {
-    list-style-type: none; /* Убираем маркеры списка */
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Располагаем элементы в ряд */
-    gap: 2em; /* Пробелы между элементами */
+    display: flex;
+    gap: 2em;
 }
 
 nav ul li {
@@ -130,15 +140,31 @@ nav ul li a {
     font-weight: bold;
     color: #262626;
     text-transform: uppercase;
-    text-decoration: none; /* Убираем подчёркивание */
+    text-decoration: none;
+    position: relative; /* Это нужно для позиционирования псевдоэлемента */
+    transition: color 0.3s;
 }
 
-    nav ul li a:hover {
-        color: #1B76FF; /* Цвет при наведении, если нужно */
-        border-bottom: 2px solid #1B76FF;
-        transition: color 0.3s;
-    }
-/* - - - - - - - - - - - - - - - - - - - - /heared - - - - - - - - - - - - - - - - - - - - */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1B76FF;
+    transform: scaleX(0); /* Начальное состояние: скрытый бордер */
+    transform-origin: left; /* Начальная точка для анимации */
+    transition: transform 0.3s ease; /* Плавная анимация */
+}
+
+nav ul li a:hover {
+    color: #1B76FF;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Плавное появление бордера слева направо */
+}
 
 
 
@@ -149,41 +175,30 @@ nav ul li a {
 
 
 
+/* - - - - - main-screen главный экран с моим фото - - - - - */
+main{
+    padding-top: 1px; /* Должно стоять 100px когда будет двигаться меню */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - main-screen - - - - - - - - - - - - - - - - - - - - */
 .main-screen{ 
     display: flex;
     align-items: center;
     height: 75vh;
     margin: var(--margin-big);
+    margin-bottom: 100px;
     background-image: url('./img/how-i-work-l.jpg');
     background-size: cover;
+    background-position: left;
+    border-radius: 10px;
 
 }
 
 /* Описание преподаватель онлайн курсов Александр Белоусов */
 .main-description{
     padding: 0 5%;
+    padding-top: 19%;
     margin-top: 20%;
     width: 40%;
-    background-color: rgb(1, 6, 36);
 }
 
 .main-description h1,
@@ -192,10 +207,9 @@ nav ul li a {
 .main-description {
     margin: 2% 0;
     text-transform: uppercase;
-    color: white;
+    color: #FFFFFF;
 }
 
-/* Нужно будет правильно настроить размеры тегов h потому что они тут как не очень подходят по размерам */
 .main-description h2{
     font-size: 1rem;
 }
@@ -203,7 +217,10 @@ nav ul li a {
 .main-description h1{
     font-size: 2rem;
 }
-/* - - - - - - - - - - - - - - - - - - - - /main-screen - - - - - - - - - - - - - - - - - - - - */
+
+.main-description p{
+    font-size: 1rem;
+}
 
 
 
@@ -214,60 +231,115 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - reviews - - - - - - - - - - - - - - - - - - - - */
-.reviews{ 
+/* - - - - - reviews отзывы начало - - - - - */
+.reviews{
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #000;
+    background-image: url(img/reviews-bg.png);
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
 }
+
 
 .reviews-description{
-    background-color: antiquewhite;
+    position: relative;
     margin: var(--margin-big);
-    margin-top: 100px;
-    padding: 1% 5%;
+    padding: 1% 5%; 
     text-align: center;
+    z-index: 1;
 }
 
-.reviews-description h3{
-    margin-bottom: 10px;
+.reviews-description h2{
+    margin-top: 150px;
+    color: white;
+    text-shadow: 3px 3px 23px rgba(14,  14,  14, 0.24);
 }
 
-.photo-green{
-    background-color: rgb(108, 188, 108);
-    /* padding: 5%; */ /* для него надо наверно внтури ещё один блок, для контената inner чтобы он не выходил за пределы */
-    margin-bottom: 20px;
-    height: 250px;
+.reviews-description p{
+    color: white;
+    text-shadow: 3px 3px 23px rgba(14,  14,  14, 0.24);
+}
+
+.number-700{
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FF9000;
+}
+
+/* Смайлик :O */
+.smile-o{
+    position: absolute;
+    font-size: 4rem;
+    bottom: 15%;
+    left: 35.8%;
+    z-index: -1;
+}
+
+.reviews__photo{
     width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews__photo .row{
+    display: flex;
+    align-items: center;
+}
+
+/* С групами фото */
+.photo-with-groups{
+    width: 180px; /* 270 */
+    height: 114px;
+    margin: 2px;
+    /* overflow: hidden; */ /* Если убрать изображение будет внутрь растягиваться */
+    border-radius: 10px;
+    border: 2px solid rgba(205, 205, 205, 0.372);
+}
+
+.photo-with-groups img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.photo-with-groups img:hover{
+    transform: scale(1.5);
+    transition: 0.3s;
+}
+
+/* С индивидуальными */
+.photo-with-student{
+    width: 350px;
+    height: 100px;
+    margin: 0 5px;
+    border-radius: 10px;
+    border: 2px solid rgba(205, 205, 205, 0.372);
+    overflow: hidden;
+    
+}
+
+.photo-with-student img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
 .reviews-button button{
     margin-top: 20px;
 }
-/* - - - - - - - - - - - - - - - - - - - - /reviews - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -279,38 +351,18 @@ nav ul li a {
 
 
 
+/* - - - - - unity блок начало- - - - - */
+.unity{
+    padding: 200px 0;
+    background-color: #000;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - unity - - - - - - - - - - - - - - - - - - - - */
-.unity{ 
+.unity__inner{ 
     margin: var(--margin-small);
-    margin-top: 200px;
     height: 70vh;
-    /* height: 558px; */ /* это размер из фигмы */
-    /* background-color: bisque; */
     position: relative;
 }
+
 
 .unity-description{
     display: flex;
@@ -321,31 +373,38 @@ nav ul li a {
     left: 0;
     transform: translateY(-50%); /* затем поднимается на половину своей собственной высоты, чтобы быть по центру */
     width: 50%;
-    /* height: 50%; */
-    background-color: rgba(175, 175, 175, 0); /* Прозрачность можно добавлять в цвет в конце */
-    z-index: 2;
-    padding: 5% 0;
+    z-index: 3;
 }
 
 .unity-description-logo{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
 }
 
-.unity-description-title{
+/* .unity-description-logo img{
+    box-shadow: 0 4px 33px 0 rgba(255, 255, 255, 0.37);    
+} */
+
+.unity-description-logo p{
+    font-size: 2rem;
+    color: #D5D5D5;
+}
+
+.unity-description-title h3{
+    font-size: 3rem;
+    color: #ECECEC;
     margin-bottom: 5%;
-    -webkit-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
-    -moz-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
-    text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.89);
 }
 
 .unity-description-description p{
-    -webkit-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
-    -moz-text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
-    text-shadow: 1px 1px 25px rgba(255,  255,  255, 0.89);
+    font-size: 1.3rem;
+    color: #EFEFEF;
+    text-shadow: 1px 1px 25px rgba(0, 0, 0, 0.89);
 }
 
-
-
+/* Gif */
 .unity-tizer{
     position: absolute;
     top: 0;
@@ -353,11 +412,13 @@ nav ul li a {
     width: 76%;
     height: 100%;
     background-color: rgb(58, 58, 58, 0.5);
-    z-index: 1;
+    z-index: 0;
     border-radius: 10px;
-    background-image: url(/img/gif/Unity-tizer.gif2); /* - - - - - - -- - - - - - - - - - - - - - -GIF Unity */
+    background-image: url(/img/gif/unity-tizer.gif);
     background-size: cover;
+    /* filter: blur(43px); */
 }
+
 
 /* .unity-button{
     /* position: absolute; */ /* Позиционируем кнопку абсолютно */
@@ -367,7 +428,6 @@ nav ul li a {
     /* left: 50%; */ /* Центруем кнопку по горизонтали */
     /* transform: translateX(-50%); */
     /* margin: 10%; */
-
 
 
 .unity-33per{
@@ -384,7 +444,6 @@ nav ul li a {
 .unity-33per button{
     margin-bottom: 10%;
 }
-/* - - - - - - - - - - - - - - - - - - - - /unity - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -395,29 +454,30 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - advantages - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - advantages преимущества начало - - - - - */
 .advantages{
-    margin: var(--margin-big);
-    margin-top: 150px;
+    background-color: #000;
+    padding: 150px 0;
 }
 
-.advantages .grid-container{
+.advantages__inner{
+    margin: var(--margin-big);
+}
+
+.advantages__inner h2{
+    color: #F4F4F4;
+}
+
+.advantages__inner h3{
+    color: #E9E9E9;
+}
+
+.advantages__inner p{
+    color: #E9E9E9;
+}
+
+
+.advantages__inner .grid-container{
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -427,7 +487,7 @@ nav ul li a {
 
     /* Для средних экранов */
     @media (max-width: 1200px) {
-        .advantages .grid-container{
+        .advantages__inner .grid-container{
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
         }
@@ -435,138 +495,202 @@ nav ul li a {
 
     /* Для телефонов */
     @media (max-width: 600px) {
-        .advantages .grid-container{
+        .advantages__inner .grid-container{
             grid-template-columns: 1fr;
             grid-template-rows: repeat(6, 1fr);
         }
     }
-    
-.grid-item{ 
-    background-color:lightgray;
-    padding: 20px 150px 20px 20px;
-    border-radius: 15px;
-    min-height: 250px;
-    min-width: 33%;
+
+/* Ячейки грида */
+.advantages__inner .grid-container .grid-item{
     position: relative;
+    min-width: 33%;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #313131;
+    background: rgba(205, 205, 205, 0.19);
+    box-shadow: 9px 11px 38px -8px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 3;
 }
 
-.grid-item .icon{
-    font-size: 80px;
+.advantages__inner .grid-container .grid-item h3{
+    margin-bottom: 50px;
+    padding-right: 70px;
+    color: #e9e9e9;
+}
+
+.advantages__inner .grid-container .grid-item p{
+    color: rgba(213, 213, 213, 0.88);
+}
+
+.advantages__inner .grid-container .grid-item .icon{
+    font-size: 5rem;
     position: absolute;
     top: 0px;
     right: 14px;
+    z-index: 2;
 }
 
-.advantages .grid-item h4{
-    width: 70%;
-    margin-bottom: 50px;
+.advantages__inner .grid-container .grid-item .icon-blur{
+    font-size: 12.5rem;
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    filter: blur(50px);
+    z-index: 1;
+    user-select: none;
 }
 
-.advantages .grid-item p{
-    width: 90%;
+
+
+
+
+
+
+
+
+
+/* - - - - - web-sites сайты блок начало - - - - - */
+.web-sites{
+    background: -webkit-linear-gradient(180deg, rgb(0, 0, 0) 70%, var(--color-bg) 70%);
+    background: -moz-linear-gradient(180deg, rgb(0, 0, 0) 70%, var(--color-bg) 70%);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 70%, var(--color-bg) 70%);
+    overflow: hidden;
 }
-/* - - - - - - - - - - - - - - - - - - - - /advantages - - - - - - - - - - - - - - - - - - - - */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - web-sites - - - - - - - - - - - - - - - - - - - - */
-.web-sites{ 
+.web-sites__inner{
+    position: relative;
     margin: var(--margin-big);
-    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.web-sites h2{
-    margin-bottom: -17px;
-}
+.web-sites__inner h2{
+    font-size: 17rem;
+    margin-bottom: -6%;
+    font-weight: 800;
+    
+    background: radial-gradient(50% 50% at 50% 50%, rgb(173, 162, 172) 42.5%, rgb(67, 66, 71) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 
+    white-space: nowrap; /* Запрещает перенос текста */
+    overflow: visible; /* Позволяет выходить за пределы контейнера */
+}
 
 .web-tizer{
     margin: var(--margin-big);
     width: 100%;
     height: 800px;
-    background-color: #e6e6e3;
+    background-image: url(img/gif/web-tizer.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 20px 20px 0 0;
+    border: 10px solid #704D60;
+    border-bottom: none;
+}
 
+.web-sites__inner__blur{
+    width: 130%;
+    height: 300px;
+    position: absolute;
+    background-color: var(--color-bg);
+    bottom: -140px;
+    filter: blur(50px);
 }
 
 
-
-
-
-
+/* Начало грида, по сайтам */
 .web-grid{
     margin: var(--margin-big);
 }
 
-.web-grid h3{
+.web-grid h2{
+    font-size: 5rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
     text-align: center;
-    margin: 30px;
+    background: linear-gradient(90deg, #5750ed 0%, #c42cee 36.5%, #f24646 68%, #ff5e00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+.web-grid > p{
+    margin-top: 1%;
+    margin-bottom: 7%;
+    font-size: 2.5rem;
+    text-align: center;
+}
 
 .web-grid .grid-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 20px;
+    margin-bottom: 150px;
 }
 
-.grid-item{ 
-    background-color:lightgray;
-    padding: 20px 150px 20px 20px;
-    border-radius: 15px;
-    min-height: 250px;
-    min-width: 33%;
+.web-grid .grid-container .grid-item{
     position: relative;
+    min-width: 33%;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ededed;
+    background: var(--bg-color-grid-white);
+    box-shadow: 9px 11px 38px -8px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 3;
 }
 
-.grid-item .icon{
-    font-size: 80px;
+.web-grid .grid-container .grid-item h3{
+    margin-bottom: 50px;
+    padding-right: 70px;
+    color: #202020;
+}
+
+.web-grid .grid-container .grid-item p{
+    color: rgba(69, 69, 69, 0.88);
+}
+
+.web-grid .grid-container .grid-item .icon{
+    font-size: 5rem;
     position: absolute;
     top: 0px;
     right: 14px;
+    z-index: 2;
+}
+
+.web-grid .grid-container .grid-item .icon-blur{
+    font-size: 12.5rem;
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    filter: blur(50px);
+    z-index: 1;
+    user-select: none;
 }
 
 .web-grid .item1{
     grid-column: span 2;
 }
 
-.web-grid .item2{
+/* Синий блок справа */
+.web-grid .grid-container .item2{
     grid-row: span 2;
+    background: linear-gradient(135deg, #013fcf 0%, #00cfe9 100%);
 }
-/* - - - - - - - - - - - - - - - - - - - - /web-sites - - - - - - - - - - - - - - - - - - - - */
+
+.web-grid .grid-container .item2 h3{
+    color: #fff;
+    text-align: center;
+}
 
 
 
@@ -577,47 +701,27 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - which-course - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - which-course какой курс выбрать - - - - - */
 .which-course{ 
     margin: var(--margin-big);
 }
 
 .which-course h2{
     margin-bottom: 10px;
+    color: #222222;
 }
 
-.which-course p{
-    margin-bottom: 30px;
+.which-course h2 span{
+    font-size: 3.5rem;
+    color: orange;
 }
 
+.which-course > p{
+    margin-bottom: 5%;
+    color: #555555;
+}
+
+/* Grid выбора курса */
 .which-course .grid-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -625,22 +729,99 @@ nav ul li a {
     grid-gap: 20px;
 }
 
-.grid-item{ 
-    background-color:lightgray;
-    padding: 20px 150px 20px 20px;
+.which-course .grid-container .grid-item{
+    display: flex;
+    /* min-width: 33%; */
+    /* min-height: 250px; */
+    padding: 20px;
     border-radius: 15px;
-    min-height: 250px;
-    min-width: 33%;
-    position: relative;
+    border: 1px solid #ededed;
+    box-shadow: 9px 11px 38px -8px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 3;
 }
 
-.grid-item .icon{
-    font-size: 80px;
-    position: absolute;
-    top: 0px;
-    right: 14px;
+/* Левый блок в ячейке */
+.grid-item__inner__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    height: 100%;
 }
-/* - - - - - - - - - - - - - - - - - - - - /which-course - - - - - - - - - - - - - - - - - - - - */
+
+.grid-item__inner__left h3{
+    color: #202020;
+    /* color: #F3F3F3; */
+}
+
+.grid-item__inner__left p{
+    padding: 10% 0;
+    color: rgba(69, 69, 69, 0.88);
+    /* color: #FFFFFF; */
+}
+
+.grid-item__inner__left__button{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Правый блок в ячейке */
+.grid-item__inner__right{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.grid-item__inner__right__icon{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.which-course .grid-container .grid-item .age{
+    width: 100%;
+    height: 5%;
+}
+
+.grid-item__inner__right p{
+    font-size: 0.7rem;
+    text-align: end;
+    color: #7A7A7A;
+}
+
+/* Задние фоны ячеек */
+.bg{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.bg__kg{
+    background-image: url(img/which-course/bg-kg.png);
+}
+
+.bg__scratch{
+    background-image: url(img/which-course/bg-scratch.png);
+}
+
+.bg__roblox{
+    background-image: url(img/which-course/bg-roblox.png);
+}
+
+.bg__unity{
+    background-image: url(img/which-course/bg-unity.png);
+}
+
+.bg__web{
+    background-image: url(img/which-course/bg-web.png);
+}
+
+.bg__python{
+    background-image: url(img/which-course/bg-python.png);
+}
 
 
 
@@ -657,15 +838,7 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - price - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - price понятные цены начало - - - - - */
 .price{ 
     margin: var(--margin-big);
 }
@@ -735,7 +908,6 @@ nav ul li a {
 .one-two p{
     margin-bottom: 10px;
 }
-/* - - - - - - - - - - - - - - - - - - - - /price - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -746,30 +918,7 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - best-works - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - best-works лучшие цены начало - - - - - */
 .best-works{
     margin: var(--margin-big);
 }
@@ -777,10 +926,6 @@ nav ul li a {
 .best-works h2{
     margin-bottom: 10px;
 }
-
-
-
-
 
 .small-window{
     display: flex;
@@ -798,7 +943,6 @@ nav ul li a {
 .small-window__inner h4{
     margin-bottom: 40px;
 }
-/* - - - - - - - - - - - - - - - - - - - - /best-works - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -810,33 +954,7 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - how-to-start - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - how-to-start как начать заниматься начало - - - - - */
 .how-to-start{
     margin: var(--margin-big);
 }
@@ -864,7 +982,6 @@ nav ul li a {
     position: relative;
     background-color:lightgray;
 }
-/* - - - - - - - - - - - - - - - - - - - - /how-to-start - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -875,27 +992,7 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - questions - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - questions ответы на вопросы начало - - - - - */
 .questions{
     margin: var(--margin-big);
     margin-top: 400px;
@@ -938,7 +1035,6 @@ nav ul li a {
 .questions__ul__button .first-button{
     margin-right: 20px;
 }
-/* - - - - - - - - - - - - - - - - - - - - /questions - - - - - - - - - - - - - - - - - - - - */
 
 
 
@@ -949,37 +1045,7 @@ nav ul li a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - form-call - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - form-call форма для заявок начало - - - - - */
 .form-call{
     height: 500px;
     padding: 5% 16%;
@@ -997,6 +1063,7 @@ nav ul li a {
     justify-content: space-evenly;
 }
 
+/* Левый блок */
 .left-block{
     width: 50%;
     padding: 5%;
@@ -1012,12 +1079,7 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
-
-
-
-
-
-
+/* Правый блок */
 .rigth-block{
     width: 50%;
     padding: 5%;
@@ -1025,20 +1087,14 @@ nav ul li a {
 }
 
 .rigth-block input{
-    width: calc(100% - 10px);
+    width: calc(100% - 22px);
     height: 40px;
     margin-bottom: 5px;
     border-radius: 10px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
-
-
-
-
-
-
-
+/* Кнопка */
 .button-and-text{
     margin-top: 20px;
     display: flex;
@@ -1052,35 +1108,13 @@ nav ul li a {
 
 
 
-/* - - - - - - - - - - - - - - - - - - - - /form-call - - - - - - - - - - - - - - - - - - - - */
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* - - - - - - - - - - - - - - - - - - - - footer - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - footer нижняя часть начало - - - - - */
 footer{
     background-color: #17151e;
     padding: 2% 16%;
@@ -1114,4 +1148,3 @@ footer{
     height: 100px;
     background-color: #32291c;
 }
-/* - - - - - - - - - - - - - - - - - - - - /footer - - - - - - - - - - - - - - - - - - - - */
