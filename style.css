@@ -70,6 +70,11 @@ button{
 
 
 
+
+
+
+
+
 /* - - - - - heared начало - - - - - */
 header{
     background-color: #fffffff6;
@@ -83,34 +88,36 @@ header{
 }
 
 .header__inner{
+    margin: var(--margin-xl);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding: 1% 0;
     overflow: hidden;
 }
 
-.header-left-block{
+.header__inner__top{
+    width: 100%;
     display: flex;
-}
-
-.header-left-block .logo{
-    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.header-left-block .logo img{
-    width: 80px;
-    margin-right: 50px;
+.header__inner__top__logo img{
+    width: 5rem;
+}
+
+.header__inner__top .name{
+    margin-right: 25%;
 }
 
 /* - - - - - Печатающийся текст для лого - - - - - */
-.header-left-block .name h4 {
+.header__inner__top .name h4 {
     font-family: 'Nico Moji', sans-serif;
     font-size: 2em;
 }
 
-.header-left-block .name p {
+.header__inner__top .name p {
     font-size: 0.7em;
     overflow: hidden;
     white-space: nowrap;
@@ -131,7 +138,15 @@ header{
     50% { border-color: black; }
 }
 
-/* - - - - - nav меню начало - - - - - */
+/* Меню, навигация */
+nav{
+    display: block;
+}
+
+.nav-hidden p{
+    font-size: 3rem;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -176,6 +191,61 @@ nav ul li a:hover::after {
     transform: scaleX(1); /* Плавное появление бордера слева направо */
 }
 
+/* Знак = для маленьких экранов */
+.nav-hidden{
+    display: none;
+}
+
+/* 1400 */
+@media (max-width: 1400px) {
+	.header__inner{
+        margin: var(--margin-l);
+    }
+
+    .header__inner__top .name{
+        margin-right: 15%;
+    }
+}
+
+/* 1200 */
+@media (max-width: 1200px) {
+    .header__inner{
+        margin: var(--margin-m);
+    }
+}
+
+/* 992 */
+@media (max-width: 992px) {
+    .header__inner__top .name{
+        margin-right: 40%;
+    }
+
+	nav{
+        display: none;
+    }
+
+    .nav-hidden{
+        display: block;
+    }
+}
+
+/* 768 */
+@media (max-width: 768px) {
+	
+}
+
+/* 576 */
+@media (max-width: 576px) {
+    .header__inner__top .name{
+        margin-right: 0%;
+    }
+
+	.header__inner__top img{
+        width: 4rem;
+    }
+}
+
+
 
 
 
@@ -190,11 +260,15 @@ main{
     padding-top: 1px; /* Должно стоять 100px когда будет двигаться меню */
 }
 
-.main-screen{ 
+.main-screen{
+    margin-bottom: 5%;
+}
+
+.main-screen__inner{ 
     display: flex;
     align-items: center;
-    height: 75vh;
-    margin: var(--margin-xxl);
+    height: 80vh;
+    margin: var(--margin-xl);
     margin-bottom: 100px;
     background-image: url(img/header/how-i-work-l.jpg);
     background-size: cover;
@@ -232,6 +306,77 @@ main{
     font-size: 1rem;
 }
 
+/* 1400 */
+@media (max-width: 1400px) {
+	.main-screen__inner{ 
+        align-items: center;
+        height: 80vh;
+        margin: var(--margin-l);
+    }
+
+    .main-description{
+        width: 50%;
+        margin-top: 25%;
+        padding: 0 2%;
+    }
+}
+
+/* 1200 */
+@media (max-width: 1200px) {
+	.main-description{
+        width: 50%;
+        margin-top: 30%;
+        padding: 0 2%;
+    }
+}
+
+/* 992 */
+@media (max-width: 992px) {
+	.main-screen__inner{ 
+        align-items: center;
+        height: 60vh;
+        margin: var(--margin-m);
+        background-position: center;
+    }
+
+    .main-description{
+        margin-top: 40%;
+        width: 70%;
+    }
+}
+
+/* 768 */
+@media (max-width: 768px) {
+	.main-screen__inner{ 
+        align-items: center;
+        height: 80vh;
+        margin: var(--margin-m);
+        background-position: center;
+    }
+
+    .main-description{
+        margin-top: 45%;
+        width: 80%;
+    }
+}
+
+/* 576 */
+@media (max-width: 576px) {
+    .main-screen__inner{ 
+        align-items: center;
+        height: 50vh;
+        margin: var(--margin-m);
+        background-position: center;
+    }
+
+    .main-description{
+        margin-top: 45%;
+        padding: 0 5%;
+        width: 95%;
+    }
+}
+
+
 
 
 
@@ -243,35 +388,30 @@ main{
 
 /* - - - - - reviews отзывы начало - - - - - */
 .reviews{
-    padding-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #000;
     background-image: url(img/review/reviews-bg.png);
     background-size: cover;
     background-position: top;
     overflow: hidden;
 }
 
+.reviews__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 
-.reviews-description{
+.reviews__inner__title{
     position: relative;
-    margin: var(--margin-xxl);
-    padding: 1% 5%; 
+    margin: var(--margin-l);
+    margin-bottom: 2%;
     text-align: center;
     z-index: 1;
 }
 
-.reviews-description h2{
-    margin-top: 150px;
+.reviews__inner__title h2{
     color: white;
-    text-shadow: 3px 3px 23px rgba(14,  14,  14, 0.24);
-}
-
-.reviews-description p{
-    color: white;
-    text-shadow: 3px 3px 23px rgba(14,  14,  14, 0.24);
 }
 
 .number-700{
@@ -291,7 +431,7 @@ main{
 
 .reviews__photo{
     width: 100%;
-    padding-bottom: 20px;
+    margin-bottom: 3%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -308,7 +448,6 @@ main{
     width: 180px; /* 270 */
     height: 114px;
     margin: 2px;
-    /* overflow: hidden; */ /* Если убрать изображение будет внутрь растягиваться */
     border-radius: 10px;
     border: 2px solid rgba(205, 205, 205, 0.372);
 }
@@ -335,7 +474,6 @@ main{
     border-radius: 10px;
     border: 2px solid rgba(205, 205, 205, 0.372);
     overflow: hidden;
-    
 }
 
 .photo-with-student img{
@@ -347,9 +485,40 @@ main{
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.reviews-button button{
-    margin-top: 20px;
+.reviews__inner__description{
+    margin: var(--margin-l);
+    margin-bottom: 3%;
 }
+
+.reviews__inner__description p{
+    color: white;
+}
+
+/* 1400 */
+@media (max-width: 1400px) {
+	
+}
+
+/* 1200 */
+@media (max-width: 1200px) {
+	
+}
+
+/* 992 */
+@media (max-width: 992px) {
+	
+}
+
+/* 768 */
+@media (max-width: 768px) {
+	
+}
+
+/* 576 */
+@media (max-width: 576px) {
+	
+}
+
 
 
 
@@ -1728,4 +1897,3 @@ footer{
     font-size: 0.6rem;
     color: #676767;
 }
-
