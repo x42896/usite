@@ -12,25 +12,29 @@
     <!-- - - - - - header и nav шапка с меню - - - - - -->
     <header>
         <div class="header__inner">
-            <div class="header-left-block">
-                <div class="logo">
+            <div class="header__inner__top">
+                <div class="header__inner__top__logo">
                     <a href="#"><img src="img/header/logo.png" alt="logo"></a>
-    
-                    <div class="name">
-                        <h4>UnionCode</h4>
-                        <p>Курсы онлайн программирования</p>
-                    </div>
+                </div>
+
+                <div class="name">
+                    <h4>UnionCode</h4>
+                    <p>Курсы онлайн программирования!!</p>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">О себе</a></li>
+                        <li><a href="#">Как выбрать курс</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Оставить заявку</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-hidden">
+                    <p>=</p>
                 </div>
             </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#">О себе</a></li>
-                    <li><a href="#">Как выбрать курс</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Оставить заявку</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
@@ -38,100 +42,102 @@
 
         <!-- - - - - - main-screen главный экран - - - - - -->
         <div class="main-screen">
-            <div class="main-description">
-                <!-- Картингку главную добавить для семантики может -->
-                <h4>Преподаватель онлайн курсов</h4>
-                <h1>Александр Белоусов</h1>
-                <p>Преподаватель по программированию для вашего ребёнка
-                Занимаюсь разработкой игр на движках Unity и Roblox Studio
-                А так же обучаю разработке сайтов </p>
-                <button>Подробнее</button>
+            <div class="main-screen__inner">
+                <div class="main-description">
+                    <!-- Картингку главную добавить для семантики может -->
+                    <h4>Преподаватель онлайн курсов</h4>
+                    <h1>Александр Белоусов</h1>
+                    <p>Преподаватель по программированию для вашего ребёнка
+                    Занимаюсь разработкой игр на движках Unity и Roblox Studio
+                    А так же обучаю разработке сайтов </p>
+                    <button>Подробнее</button>
+                </div>
             </div>
         </div>
 
 
         <!-- - - - - - reviews отзывы - - - - - -->
         <div class="reviews">
-            <div class="blur-left"></div>
-            <div class="blur-right"></div>
-            <div class="reviews-description">
-                <h2>Больше <span class="number-700">700</span><span class="smile-o">😲</span> довольных студентов</h2>
-            </div>
-            
-            
-            <div class="reviews__photo">
-                <div class="row">
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/3.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/1.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/2.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/2.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/1.jpg" alt="">
-                    </div>
+            <div class="reviews__inner">
+                <div class="reviews__inner__title">
+                    <h2>Больше <span class="number-700">700</span><span class="smile-o">😲</span> довольных студентов</h2>
                 </div>
-                <div class="row">
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/5.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/4.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/4.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/8.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/6.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/6.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/7.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-student">
-                        <img src="img/review/ind/7.jpg" alt="">
-                    </div>
-
-                    <div class="photo-with-groups">
-                        <img src="img/review/groups/5.jpg" alt="">
-                    </div>
-                </div>
-            </div>
                 
+                
+                <div class="reviews__photo">
+                    <div class="row">
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/3.jpg" alt="">
+                        </div>
 
-            <div class="reviews-description">
-                <p>Отзывы которых вы можете посмотреть на сайте или в моём профиле Авито<br>
-                    Мы делаем реально крутые проекты, смотрите примеры ниже <span>&#58;&#41;</span></p><!-- &#58;&#41; Код :) -->
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/1.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/2.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/2.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/5.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/4.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/4.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/8.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/6.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/6.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/7.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-student">
+                            <img src="img/review/ind/7.jpg" alt="">
+                        </div>
+
+                        <div class="photo-with-groups">
+                            <img src="img/review/groups/5.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                    
+
+                <div class="reviews__inner__description">
+                    <p>Отзывы которых вы можете посмотреть на сайте или в моём профиле Авито<br>
+                        Мы делаем реально крутые проекты, смотрите примеры ниже <span>&#58;&#41;</span></p><!-- &#58;&#41; Код :) -->
+                </div>
+
+                <button>Хочу начать</button>
             </div>
-
-            <button>Хочу начать</button>
         </div>
 
 
@@ -731,25 +737,6 @@
             </div>
         </div>
     </footer>
-
-
-
-    
-    
-<!--     <script>
-        // Сохранение позиции скролла
-        window.addEventListener('beforeunload', function() {
-          localStorage.setItem('scrollPosition', window.scrollY);
-        });
-      
-        // Восстановление позиции скролла
-        window.addEventListener('load', function() {
-          const scrollPosition = localStorage.getItem('scrollPosition');
-          if (scrollPosition !== null) {
-            window.scrollTo(0, parseInt(scrollPosition, 10));
-          }
-        });
-      </script> -->
 </div>      
 </body>
 </html>
